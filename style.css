@@ -1,0 +1,229 @@
+/* RESET */
+
+ *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+    cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+    max-inline-size: 100%;
+    max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input, textarea {
+    -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+    all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+    color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+    content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+    display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+    -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+    -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+    all: revert;
+}
+
+/* END OF RESET */
+
+:root {
+    --color-primary-bright-orange: hsl(31, 77%, 52%);
+    --color-primary-dark-cyan: hsl(184, 100%, 22%);
+    --color-primary-very-dark-cyan: hsl(179, 100%, 13%);
+    --color-neutral-transparent-white: hsla(0, 0%, 100%, 0.75);
+    --color-neutral-very-light-gray: hsl(0, 0%, 95%);
+    
+}
+
+body {
+    font-size: 0.9375rem;
+    background-color: var(--color-neutral-very-light-gray);
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: 'Big Shoulders Display';
+    text-transform: uppercase;
+    color: var(--color-neutral-very-light-gray);
+    margin-bottom: 1.5625rem;
+}
+
+p {
+    opacity: 0.75;
+}
+
+p, a span {
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    line-height: 1.5625rem;
+    color: var(--color-neutral-transparent-white);
+}
+
+#section-sedans a span {
+    color: var(--color-primary-bright-orange);
+}
+
+#section-suvs a span {
+    color: var(--color-primary-dark-cyan);
+}
+
+#section-luxury a span {
+    color: var(--color-primary-very-dark-cyan);
+}
+
+#section-sedans {
+    background-color: var(--color-primary-bright-orange);
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+#section-suvs {
+    background-color: var(--color-primary-dark-cyan);
+}
+
+#section-luxury {
+    background-color: var(--color-primary-very-dark-cyan);
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.card--column-component {
+    margin: 5.5rem 1.5rem;  
+}
+
+.card--section-content {
+    padding: 3rem 3rem 3.75rem 3rem;
+}
+
+.card--section-icon {
+    margin-bottom: 2rem;
+}
+
+.card--section-button {
+    background-color: var(--color-neutral-very-light-gray);
+    padding: 1rem 1.96875rem;
+    border-radius: 2rem;
+}
+
+a {
+    
+}
+
+@media screen and (min-width: 53rem) { 
+
+    body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .card--column-component {
+        margin: 0;
+        display: flex;
+        max-width: 57.5rem;
+        margin: 1rem;
+    }
+
+    p {
+        margin-bottom: 5.1875rem;
+    }
+
+    #section-sedans {
+        border-radius: 0.5rem 0 0 0.5rem;
+    }
+
+    #section-luxury {
+        border-radius: 0 0.5rem 0.5rem 0;
+    }
+
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
